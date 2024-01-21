@@ -4,7 +4,7 @@ import hello.core.annotation.MainDiscountPolicy;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.MemberRepository;
 import hello.core.member.Member;
-import lombok.RequiredArgsConstructor;
+//import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
