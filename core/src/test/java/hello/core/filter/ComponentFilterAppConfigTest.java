@@ -16,8 +16,8 @@ public class ComponentFilterAppConfigTest {
     @Test
     void filterScan() {
         ApplicationContext ac = new AnnotationConfigApplicationContext(ComponentFilterAppConfig.class);
-        BeanA beanA = ac.getBean("beanA", BeanA.class);
-        Assertions.assertThat(beanA).isNotNull();
+//        BeanA beanA = ac.getBean("beanA", BeanA.class);
+//        Assertions.assertThat(beanA).isNotNull();
 
         assertThrows(NoSuchBeanDefinitionException.class, () -> ac.getBean("beanB",BeanB.class));
     }
@@ -25,7 +25,8 @@ public class ComponentFilterAppConfigTest {
     @Configuration
     @ComponentScan(
             includeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = MyIncludeComponent.class),
-            excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = MyExcludeComponent.class)
+//            excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = MyExcludeComponent.class)
+            excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = BeanA.class)
     )
 
     static class ComponentFilterAppConfig {
