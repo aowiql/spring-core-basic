@@ -100,7 +100,7 @@ public class SingletonWithPrototypeTest1 {
 
 
             // 싱글톤 빈
-            
+
 //           private final PrototypeBean prototypeBean; // 생성 시점에 주입
 
 //            @Autowired

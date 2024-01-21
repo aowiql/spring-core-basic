@@ -24,6 +24,13 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+
+	// JSR-330 라이브러리 추가
+	implementation 'jakarta.inject:jakarta.inject-api:2.0.1'
+
+	// request 스코프 예제 만들기,
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'javax.inject:javax.inject:1'
 	
 	// lombok 라이브러리 추가 시작
 	compileOnly 'org.projectlombok:lombok'
@@ -34,8 +41,6 @@ dependencies {
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	// JSR-330 라이브러리 추가
-	implementation 'jakarta.inject:jakarta.inject-api:2.0.1'
 }
 
 tasks.named('test') {
